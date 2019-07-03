@@ -1,9 +1,12 @@
-const db_message = require('../models/message.js')
+const db_message = require('../models/message')
 
-module.exports = (req, res) =>{
-	db_message.find({}).then( (data) => {
+module.exports = (req, res) => {
+	db_message.find({}).sort('-date').populate({
+		path: 'channel',
+		select: 'name'
+	}).then((data) => {
 		res.send(data)
-	}).catch( (err)=>{
+	}).catch((err) => {
 		res.send(err)
 	})
 }
