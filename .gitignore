@@ -66,3 +66,5 @@ typings/
 Thumbs.db
 .exe
 .dll
+/node_modules
+/.env
