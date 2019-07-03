@@ -5,7 +5,8 @@ const app = express()
 require('dotenv').config()
 
 
-app.get('/api/messages', (req,res)=> { res.send('Hello') })
+app.get('/api/messages', require('./controllers/get_messages'))
+app.post('/api/messages', require('./controllers/post_messages'))
 
 
 
