@@ -3,11 +3,11 @@ const bcrypt = require('bcrypt')
 
 
 module.exports = (req, res) =>{
-	bcrypt.hash(req.body.password, 10 , (err, encypted) => {
+	bcrypt.hash(req.body.password, 10 , (err, encrypted) => {
 		if(err){
-			res.send('You have to insert a valid password')
+			res.status(300).send('You have to insert a valid password')
 		}else{
-			res.body.password = encrypted
+			req.body.password = encrypted
 			db_user.create(req.body).then((data) => {
 				res.send(data)
 			}).catch((err) => {
