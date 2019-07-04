@@ -14,8 +14,9 @@ app.post('/api/messages', require('./controllers/post_messages'))
 app.post('/api/channels', require('./controllers/post_channels'))
 app.get('/api/channels', require('./controllers/post_channels'))
 
-//Users
-app.post('/api/signup', require('./controllers/post_users'))
+//Users authentication
+app.post('/api/signup', require('./controllers/signup'))
+app.post('/api/login', require('./controllers/login'))
 
 
 
