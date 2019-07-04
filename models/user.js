@@ -1,7 +1,7 @@
 const db = require('../db')
 const mongoose = require('mongoose')
 
-const db_user = db.model('message', {
+const db_user = db.model('user', {
 	email: {
 		type: String,
 		required: [true, 'Insert a valid email address']
@@ -11,7 +11,8 @@ const db_user = db.model('message', {
 		required: [true, 'A password is required']
 	},
 	name: {
-		type: String
+		type: String,
+		required: [true, 'Insert your name']
 	}
 })
 
